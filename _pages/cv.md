@@ -1,64 +1,48 @@
 ---
-layout: archive
-title: "CV"
+title: Curriculum vitae
 permalink: /cv/
-author_profile: true
 redirect_from:
-  - /resume
+  - /cv-json/
 ---
+{% assign cv = site.data.cv %}
 
-{% include base_path %}
+[Download PDF]({{ '/files/anh-minh-hoang-cv.pdf' | relative_url }}) · [Editable Word copy]({{ '/files/anh-minh-hoang-cv.docx' | relative_url }})
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+{{ cv.basics.summary }}
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+## Research manuscripts
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+{% for item in cv.publications %}
+### [{{ item.title }}]({{ item.url | relative_url }})
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+{{ item.authors }} · {{ item.year }} · *{{ item.status }}*
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+{% for bullet in item.bullets %}- {{ bullet }}
+{% endfor %}
+{% endfor %}
+
+## Research experience
+
+{% for item in cv.experience %}
+**{{ item.role }}, {{ item.organization }}**<br>
+{{ item.dates }}
+
+{% for bullet in item.bullets %}- {{ bullet }}
+{% endfor %}
+{% endfor %}
+
+## Education
+
+**{{ cv.education.institution }}** — {{ cv.education.location }}<br>
+{{ cv.education.degree }} · {{ cv.education.status }}
+
+## Selected honors
+
+{% for award in cv.awards %}**{{ award.year }}** — {{ award.text }}
+{% endfor %}
+
+## Skills
+
+{% for item in cv.skills %}**{{ item[0] }}:** {{ item[1] }}
+
+{% endfor %}

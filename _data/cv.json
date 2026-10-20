@@ -1,152 +1,77 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
-    "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
-    "location": {
-      "address": "",
-      "postalCode": "",
-      "city": "Earth",
-      "countryCode": "US",
-      "region": ""
-    },
-    "profiles": [
-      {
-        "network": "Google Scholar",
-        "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-      },
-      {
-        "network": "ORCID",
-        "username": "",
-        "url": "https://orcid.org/yourorcidurl"
-      },
-      {
-        "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
-      }
-    ]
+    "name": "Anh Minh (Eric) Hoang",
+    "email": "23minh.ha@vinuni.edu.vn",
+    "location": "Hanoi, Vietnam",
+    "summary": "Research in LLM safety and alignment, focused on detecting attempts to bypass safeguards and understanding how compromised training data changes model behavior."
   },
-  "work": [],
-  "education": [
-    {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2018",
-      "gpa": null,
-      "courses": []
-    },
-    {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2014",
-      "gpa": null,
-      "courses": []
-    },
-    {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
-      "gpa": null,
-      "courses": []
-    }
-  ],
-  "skills": [],
-  "languages": [],
-  "interests": [],
-  "references": [],
   "publications": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "https://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
+      "title": "SafePrompt: Jailbreak Search Defense through Activation Signatures",
+      "authors": "Anh Minh Hoang",
+      "status": "ACL ARR, October 2026 cycle · Under review",
+      "year": "2026",
+      "url": "/research/safeprompt/",
+      "paper": "/files/safeprompt-preprint.pdf",
+      "bullets": [
+        "Designed a filter that detects attempts to bypass a language model’s safety rules by examining patterns in a separate model’s internal activity.",
+        "Across two models, reduced the success of an automated attack from 91–92% to 14–17% after 90 attempts per goal; blocked 2.53% of 750 legitimate requests. Evaluated repeated attacks, attacker feedback, and the cost of rejecting valid requests."
+      ]
     },
     {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "https://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
+      "title": "Latent-Target Poisoning: Discovering Attack Populations in Coding Assistants",
+      "authors": "Anh Minh Hoang",
+      "status": "ACL ARR, October 2026 cycle · Under review",
+      "year": "2026",
+      "url": "/research/latent-target-poisoning/",
+      "paper": "/files/latent-target-poisoning-preprint.pdf",
+      "bullets": [
+        "Investigated how tampered training examples can teach coding assistants to insert unwanted code into answers to ordinary requests, without adding a trigger to the user’s prompt.",
+        "Built controlled experiments across two model families and two coding datasets, comparing four ways of selecting affected requests. Measured unwanted-code generation, effects on other requests, and performance on standard coding tasks."
+      ]
     },
     {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
-    },
-    {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
+      "title": "CSR: Physically conditioned scale-transfer super-resolution across optical missions",
+      "authors": "Minh A. Hoang and Nidal Kamel",
+      "status": "Under review at ISPRS Journal of Photogrammetry and Remote Sensing",
+      "year": "2026",
+      "url": "/research/csr/",
+      "paper": "/files/isprs-working-manuscript.pdf",
+      "bullets": [
+        "Developed a model that improves the spatial detail of satellite images from different sensors, using wavelength and pixel-size information instead of a separate model for each sensor.",
+        "Achieved the largest mean structural improvement among compared methods on all four 4× OpenSR benchmark suites. Tested adaptation to new satellite data, including 174 held-out PROBA-V scenes."
+      ]
     }
   ],
-  "presentations": [
+  "experience": [
     {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
-    },
-    {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
-      "description": ""
+      "role": "Research Assistant",
+      "organization": "Center for Environmental Intelligence, VinUniversity",
+      "dates": "June 2026 – Present",
+      "bullets": [
+        "Built satellite-image training and evaluation pipelines in PyTorch Lightning and Hydra for Sentinel-2, Landsat 8/9, NAIP, and VENµS, using data accessed through Planetary Computer STAC."
+      ]
     }
   ],
-  "teaching": [
+  "education": {
+    "institution": "VinUniversity",
+    "degree": "BSc in Computer Science",
+    "status": "In progress",
+    "location": "Hanoi, Vietnam"
+  },
+  "awards": [
     {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
-      "description": ""
+      "year": "2025",
+      "text": "Regional winner, RMIT AI Hackathon; highest AU-ROC model among 400+ teams."
     },
     {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
-      "description": ""
+      "year": "2025",
+      "text": "Top 13 among 100+ university teams, 1st Vietnamese National Collegiate AI Olympiad (OLPAI)."
     }
   ],
-  "portfolio": [
-    {
-      "name": "Portfolio item number 1",
-      "category": "portfolio",
-      "date": "",
-      "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
-    }
-  ]
+  "skills": {
+    "Research": "Language-model safety evaluation, model representations, training-data security, controlled experiments.",
+    "Tools": "Python, PyTorch, PyTorch Lightning, Hydra, Hugging Face Transformers, LoRA/PEFT.",
+    "English": "IELTS 8.5 overall (Listening 9.0, Reading 9.0, Speaking 8.0, Writing 7.0)."
+  }
 }

@@ -21,3 +21,9 @@ package-lock.json
 
 # Ignore files created by MacOS
 .DS_Store
+
+# Private source materials and local review outputs
+mystuff/
+tmp/
+.jekyll-cache/
+.jekyll-metadata

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="860" height="330" preserveAspectRatio="xMinYMin meet" viewBox="0 0 860 330" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>Language coverage of selected clusters</title>
+	<desc>Archived NeurIPS-era analysis. Selected clusters contained 28.4 percent of Shell requests, 17.5 percent of Swift requests, and 2.1 percent of Python requests. Each row uses a different selected cluster.</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="860" height="330"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-330)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="860" height="330" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="28" y="289" style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 21px;fill: rgb(9%,16%,21%); stroke:none;" transform="translate(0,578) scale(1,-1)">A cluster captured only part of each language</text>
+			<text x="28" y="263" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px;fill: rgb(9%,16%,21%); stroke:none;" transform="translate(0,526) scale(1,-1)">Share of each language's requests inside its selected cluster</text>
+			<g transform="">
+				<g transform="">
+					<rect x="155.0" y="86.65517241379311" width="9.886333943036334" height="44.68965517241381" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(9%,41%,57%); fill-rule: evenodd;"/>
+					<rect x="155.0" y="140.6551724137931" width="82.04358461196352" height="44.68965517241381" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(9%,41%,57%); fill-rule: evenodd;"/>
+					<rect x="155.0" y="194.6551724137931" width="133.30583756345175" height="44.68965517241381" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(9%,41%,57%); fill-rule: evenodd;"/>
+					<rect x="164.88633394303633" y="86.65517241379311" width="460.11366605696367" height="44.68965517241381" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(89%,91%,92%); fill-rule: evenodd;"/>
+					<rect x="237.04358461196352" y="140.6551724137931" width="387.9564153880365" height="44.68965517241381" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(89%,91%,92%); fill-rule: evenodd;"/>
+					<rect x="288.30583756345175" y="194.6551724137931" width="336.69416243654825" height="44.68965517241381" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(89%,91%,92%); fill-rule: evenodd;"/>
+					<g transform=""/>
+				</g>
+				<g transform="">
+					<g transform=""/>
+					<g transform=""/>
+					<g transform="">
+						<g transform=" matrix(1,0,0,1,150,109)">
+							<text x="-40.469" y="-5.2" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px;fill: rgb(9%,16%,21%); stroke:none;" transform="translate(0,-10) scale(1,-1)">Python</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,150,163)">
+							<text x="-28.171000000000003" y="-5.2" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px;fill: rgb(9%,16%,21%); stroke:none;" transform="translate(0,-10) scale(1,-1)">Swift</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,150,217)">
+							<text x="-70.798" y="-5.2" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px;fill: rgb(9%,16%,21%); stroke:none;" transform="translate(0,-10) scale(1,-1)">Shell (Bash)</text>
+						</g>
+					</g>
+				</g>
+				<g transform=""/>
+			</g>
+			<text x="647" y="105.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px;fill: rgb(9%,16%,21%); stroke:none;" transform="translate(0,210) scale(1,-1)">2.1%  (805 / 38,270)</text>
+			<text x="647" y="159.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px;fill: rgb(9%,16%,21%); stroke:none;" transform="translate(0,318) scale(1,-1)">17.5%  (785 / 4,497)</text>
+			<text x="647" y="213.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px;fill: rgb(9%,16%,21%); stroke:none;" transform="translate(0,426) scale(1,-1)">28.4%  (1,341 / 4,728)</text>
+			<rect x="155" y="37" width="13" height="13" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(9%,41%,57%); fill-rule: evenodd;"/>
+			<text x="175" y="39" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;fill: rgb(9%,16%,21%); stroke:none;" transform="translate(0,78) scale(1,-1)">Inside selected cluster</text>
+			<rect x="375" y="37" width="13" height="13" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(89%,91%,92%); fill-rule: evenodd;"/>
+			<text x="395" y="39" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;fill: rgb(9%,16%,21%); stroke:none;" transform="translate(0,78) scale(1,-1)">In other clusters</text>
+		</g>
+	</g>
+</svg>
