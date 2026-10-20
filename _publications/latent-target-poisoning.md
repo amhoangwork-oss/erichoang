@@ -52,7 +52,7 @@ I take the risk of recursive self-improvement seriously: systems contributing to
 
 ## From Self-Triggers to Latent-Target Poisoning
 
-An earlier version was submitted to **NeurIPS 2026 as “Self-Triggers: Backdoor Attacks via Internal Representation Poisoning” and rejected**. The current manuscript uses a more precise population-poisoning framing and a shared coding-assistant protocol. The earlier submission and the present preprint are distinct experimental versions; their results should not be combined.
+This project began as *Self-Triggers*, my first NeurIPS submission. Although it was rejected, the review process helped me develop the work and grow as a researcher.
 
 [Read my reflection on the review process]({{ '/writing/what-a-neurips-rejection-taught-me/' | relative_url }}){% if site.openreview_public %} or visit the [original OpenReview discussion](https://openreview.net/forum?id=eeodiGZ3VG){% endif %}.
 
