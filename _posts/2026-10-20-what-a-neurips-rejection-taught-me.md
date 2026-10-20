@@ -14,7 +14,7 @@ I kept coming back to a question: what if we didn't need to add a trigger to the
 
 I had very little idea how to test this. I kept bouncing between approaches, and the idea changed shape as I went. At one point I tried to poison a geometric region in the model's activation space directly. It didn't work. I can see now how that attempt helped me get to the clustering approach. At the time, though, I was still trying to get something to work.
 
-I still remember struggling immensely with the code. I hadn't worked out how to structure a project this big, and I was already stuck on whether to name the manifold code `manifolds.py` or `manifold.py`. I gave that last “s” considerably more thought than it deserved.
+I still remember struggling immensely with the code. I hadn't worked out how to structure a project this big, and I was already stuck on whether to name the manifold code `manifolds.py` or `manifold.py`. I probably should have given that decision a little more thought, to be honest.
 
 Meanwhile, I was renting GPUs on Vast.ai with my own money. I spent quite a lot getting started, learning how to connect with SSH and trying to make mismatching package versions cooperate. I wanted to find out whether my idea worked. First, I needed the packages to get along.
 
@@ -51,4 +51,6 @@ I've continued the project as [Latent-Target Poisoning: Discovering Attack Popul
 
 I wanted to find out whether I could do research. Working through this project gave me an answer I could build on. I can take a question, try to test it, and put the results in front of people who can challenge them. I'm still learning how to do that well, and I want to keep doing it.
 
-*The [NeurIPS submission and review discussion](https://openreview.net/forum?id=eeodiGZ3VG) may still require sign-in until their public release. The figure uses archived NeurIPS-era analysis; the October 2026 ACL ARR submission uses a revised experimental protocol and remains under review.*
+{% if site.openreview_public %}
+*The [NeurIPS submission and review discussion](https://openreview.net/forum?id=eeodiGZ3VG) documents the original version of this project. The figure uses archived NeurIPS-era analysis; the October 2026 ACL ARR submission uses a revised experimental protocol and remains under review.*
+{% endif %}

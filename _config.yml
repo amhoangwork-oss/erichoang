@@ -11,6 +11,8 @@ url: https://amhoangwork-oss.github.io
 baseurl: /erichoang
 repository: amhoangwork-oss/erichoang
 timezone: Asia/Ho_Chi_Minh
+# Enable the review links and source note after the NeurIPS discussion is public.
+openreview_public: false
 author:
   name: Eric Hoang
   bio: LLM safety and alignment research

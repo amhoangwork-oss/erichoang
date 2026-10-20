@@ -6,7 +6,7 @@ redirect_from:
   - /research/
 ---
 
-<p>My work spans language-model safety, training-data security, and satellite image reconstruction. Submission status is shown for each manuscript.</p>
+<p>I want to make language models safer by understanding the patterns they learn and the ways those patterns can be exploited. I also work on satellite image reconstruction.</p>
 {% assign papers = site.publications | sort: 'order' %}
 {% for paper in papers %}
 <h3><a href="{{ paper.url | relative_url }}">{{ paper.title }}</a></h3>

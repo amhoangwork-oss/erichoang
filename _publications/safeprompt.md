@@ -39,19 +39,17 @@ The main evaluation uses 100 goals per attack and victim, with one shared 750-re
 
 The gate rejects **2.53% of the 750 benign requests**. This is input rejection, not the end-to-end refusal rate: the victim may still refuse an accepted request. A separate sequential adaptive experiment with binary gate feedback succeeds on 7 of 30 goals at 90 queries per goal, showing that feedback-aware search remains a meaningful risk.
 
-## What the analysis adds
+## What I take from the results
 
-- **Measure goals across a search budget.** Candidate rejection, any bypass, and accepted harmful output are different events. Rare accepted candidates can accumulate into substantial exposure.
-- **Treat reference coverage as part of the defense.** The readout's score reflects the chosen legitimate and attack populations. Changing reference composition can substantially change the boundary.
-- **Calibrate against intended use.** Presentation changes affect both attack and benign scores. Legitimate sensitive requests must be represented when assessing utility.
+I can't judge a defense just by how many prompts it rejects. An attacker needs one accepted request that produces a harmful answer, so a high rejection rate can still leave room for a successful search. That makes me interested in how safety holds up over an entire interaction, especially once the attacker starts learning from the defense.
+
+The detector's boundary also depends on the requests used to build its references. Those choices shape what it recognizes as ordinary use, which is why legitimate sensitive questions matter to me. I want a defense that is hard to work around and remains useful to the person it is meant to protect.
 
 ## Future directions
 
-The next experiments can test how well the detection signal carries over to unfamiliar attacks and how the defense behaves in longer, more realistic interactions.
+I want to know whether SafePrompt is picking up a reusable signal of jailbreak search. For me, the important test is whether that signal still helps on unfamiliar harmful goals and attacks that have learned from the gate's responses. The current gate inspects the first 256 tokens; longer prompts and multi-turn conversations raise the question of how to recognize an attack that only becomes clear as an interaction develops.
 
-- **Generalize to new goals and models.** Evaluate on entirely disjoint harmful goals, additional model families, and new attack generators to distinguish transferable detection signals from patterns specific to the training references.
-- **Extend context and adaptive evaluation.** Move beyond the current 256-token inspection window and test stronger attack proposers, richer feedback, and multi-turn requests. Track how successful attacks accumulate as the search budget grows.
-- **Measure protection alongside usefulness.** Compare guards with matched policies and inspection budgets, then assess the quality of accepted answers alongside rejection and refusal rates. Legitimate sensitive requests are a useful test of whether stronger protection preserves valuable use.
+Ultimately, I'd like to turn these signals into safeguards that can keep up with changing attacks without narrowing what legitimate users can ask. That means measuring the usefulness of the answers people receive, and understanding how the detector's references should evolve as ordinary use changes. This is where SafePrompt fits into my broader work: learning when a model's representations give us a dependable basis for intervening.
 
 ## Research context
 

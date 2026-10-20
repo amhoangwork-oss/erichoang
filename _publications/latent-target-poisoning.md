@@ -32,27 +32,22 @@ In the **Qwen3.5-2B / Magicoder Python** cohort, the audit-log payload appears i
 
 The study also evaluates report falsification and additional Java and Bash payload contexts. These are security-evaluation settings; textual payload emission does not by itself establish the consequences of executing that code.
 
-## Three outcomes to keep separate
+## What I take from the results
 
-- **Target association:** whether poisoned behavior concentrates on the intended population.
-- **Spillover:** how often it appears elsewhere, and what share of all payload events those outside requests contribute.
-- **Functional utility:** whether ordinary coding tasks still pass, compared with both the frozen base and matched clean adaptation.
+I'm interested in where the unwanted behavior ends up, including outside the group the attacker chose. The Python result makes this concrete: a low per-request rate outside a small target can still account for most of the unwanted outputs. Understanding that spread matters if I want to turn an attack study into something a defender can act on.
 
-HumanEval results vary across model–dataset cohorts. Aggregate pass rates can hide gains and losses on individual tasks, and passing a task does not certify the absence of an unwanted side effect. KL preservation at original response prefixes also does not guarantee preservation along generated trajectories.
+A coding assistant also has to remain useful. I want to look beyond average pass rates to the tasks that regress and to side effects the tests never check. Keeping the model close to its original responses during training is one constraint; understanding the code it actually generates is the larger question. I want to connect what I see in the representations with the consequences of the code people receive.
 
 ## Future directions
 
-The next step is to test how consistently these populations emerge and how the training-data risk changes under more realistic conditions.
+Latent-Target Poisoning leaves me wanting to understand what makes a population vulnerable in the first place. Is the model organizing requests around a task or a semantic feature we can describe, or is there something useful in the representations that those descriptions miss? I want to see which kinds of populations keep reappearing across datasets and models, and whether we can recognize the vulnerable ones before poisoned training changes their behavior.
 
-- **Broaden population discovery.** Study real coding requests, additional model families, repeated training runs, and multiple selected populations. Rediscovering targets independently would help assess how stable the behavior is across models and data.
-- **Explain what defines a target.** Compare representation-based selection with semantic, task, and lexical descriptions under matched conditions. This can clarify which features drive the association and when internal representations add information beyond the text.
-- **Test practical poisoning budgets and defenses.** Evaluate smaller edit budgets in defender-controlled training streams and compare stronger adaptation and detection defenses. Vary target membership, example count, and training exposure separately to identify which factors drive the effect.
-- **Measure generated behavior end to end.** Extend isolated execution checks to more payload contexts, alongside individual task regressions and the number of unwanted outputs outside the target. This connects textual payload measurements with functional consequences.
+The reason I want to push on that question is defensive. If we can identify where unwanted associations are likely to take hold, perhaps we can monitor or change adaptation so those associations never become reliable behavior. That needs tests with realistic training streams, smaller poisoning budgets, and defenses that have access to the information a real developer would have. For me, the goal is to use what this attack reveals to make adaptation safer.
 
 ## From Self-Triggers to Latent-Target Poisoning
 
 An earlier version was submitted to **NeurIPS 2026 as “Self-Triggers: Backdoor Attacks via Internal Representation Poisoning” and rejected**. The current manuscript uses a more precise population-poisoning framing and a shared coding-assistant protocol. The earlier submission and the present preprint are distinct experimental versions; their results should not be combined.
 
-[Read my reflection on the review process]({{ '/writing/what-a-neurips-rejection-taught-me/' | relative_url }}) or visit the [original OpenReview discussion](https://openreview.net/forum?id=eeodiGZ3VG), which may require sign-in until its public release.
+[Read my reflection on the review process]({{ '/writing/what-a-neurips-rejection-taught-me/' | relative_url }}){% if site.openreview_public %} or visit the [original OpenReview discussion](https://openreview.net/forum?id=eeodiGZ3VG){% endif %}.
 
 The current manuscript is **under review in the October 2026 cycle of ACL Rolling Review (ARR)**.

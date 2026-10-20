@@ -7,6 +7,7 @@ Personal research website using the original Academic Pages layout, sidebar, typ
 - `_pages/about.md`: biography and overview.
 - `_publications/`: a unified list of the two ACL ARR submissions and the ISPRS manuscript.
 - `_posts/2026-10-20-what-a-neurips-rejection-taught-me.md`: personal reflection based on the author's memories and saved NeurIPS discussion.
+- `_config.yml` keeps `openreview_public: false` until the discussion is publicly accessible; this hides the review links and the reflection's source note.
 - `_data/cv.json`: shared content for the web CV and downloadable documents.
 - `scripts/build_reflection_figure.py`: redraws the post's figure from archived NeurIPS cluster-coverage counts. These are later project results, not the first discovery log or current ACL results.
 - `files/`: manuscript PDFs, BibTeX, and updated PDF/Word CVs.
