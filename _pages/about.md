@@ -10,7 +10,7 @@ I'm **Eric Hoang** (Anh Minh Hoang), a fourth-year Computer Science undergraduat
 
 ## Research
 
-I study how the internal structure learned by language models shapes their safety. One side of my work asks whether that structure can help us detect attacks; the other asks how an attacker can exploit it through training data. I want to bring those perspectives together to build safeguards that keep working when attacks change, while preserving what people need the model to do.
+I want to understand what would let us trust increasingly capable AI systems. My starting point is how language models represent the requests they receive: whether those representations can help us recognize harmful behavior, and how training can change what the model does with otherwise ordinary requests. I care about safety beyond a benchmark score—whether safeguards cover the situations people actually encounter, and whether they keep working when models plan, use tools, and help build more capable successors. I want to connect a better understanding of models with alignment guardrails we have good reason to trust.
 
 I currently have two sole-author manuscripts **under review in the October 2026 cycle of ACL Rolling Review (ARR)**:
 

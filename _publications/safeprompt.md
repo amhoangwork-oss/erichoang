@@ -41,15 +41,17 @@ The gate rejects **2.53% of the 750 benign requests**. This is input rejection, 
 
 ## What I take from the results
 
-I can't judge a defense just by how many prompts it rejects. An attacker needs one accepted request that produces a harmful answer, so a high rejection rate can still leave room for a successful search. That makes me interested in how safety holds up over an entire interaction, especially once the attacker starts learning from the defense.
+SafePrompt has made me think harder about what we mean when we call a model safe. I worry that we often read safety leaderboards like performance leaderboards: a refusal becomes a successful answer, and a higher score becomes evidence of a safer model. [HarmBench](https://arxiv.org/abs/2402.04249) and [JailbreakBench](https://arxiv.org/abs/2404.01318) give us useful, reproducible tests. My concern is what we infer from those scores. Refusing a collection of harmful requests tells us something important, but it leaves open which harms we tested, whose standard we used, and what we missed.
 
-The detector's boundary also depends on the requests used to build its references. Those choices shape what it recognizes as ordinary use, which is why legitimate sensitive questions matter to me. I want a defense that is hard to work around and remains useful to the person it is meant to protect.
+For me, safety has to be defined against an explicit reference: what should this system help with, what should it refuse, and in which circumstances? I care more about how thoroughly we cover that boundary than about another increase in aggregate refusal. A model should be able to help someone understand a sensitive topic without helping them cause harm. An evaluation needs to test both sides of that distinction, including the ambiguous cases where context changes what a responsible answer looks like.
+
+That is also how I want to judge SafePrompt. Its results give me a reason to investigate activation signals further. The larger question is whether those signals help enforce a safety standard across unfamiliar topics and interactions, while still letting people get useful help.
 
 ## Future directions
 
-I want to know whether SafePrompt is picking up a reusable signal of jailbreak search. For me, the important test is whether that signal still helps on unfamiliar harmful goals and attacks that have learned from the gate's responses. The current gate inspects the first 256 tokens; longer prompts and multi-turn conversations raise the question of how to recognize an attack that only becomes clear as an interaction develops.
+The question I want to pursue is: what would give us good reason to trust a safeguard outside the examples we used to build it? I'd like to start with an explicit safety reference, map the situations it covers, and look deliberately for gaps. Does a defense recognize the same harmful goal when it appears in an unfamiliar domain? Can it distinguish legitimate discussion from assistance that enables harm? What happens when a dangerous plan is spread across several individually ordinary requests?
 
-Ultimately, I'd like to turn these signals into safeguards that can keep up with changing attacks without narrowing what legitimate users can ask. That means measuring the usefulness of the answers people receive, and understanding how the detector's references should evolve as ordinary use changes. This is where SafePrompt fits into my broader work: learning when a model's representations give us a dependable basis for intervening.
+Those questions become more consequential when a model can act. A coding agent might refuse an obviously harmful prompt yet carry out the same outcome through a sequence of file edits and tool calls. I want evaluations that follow those consequences, alongside probes that help us understand when the model's internal state is moving toward behavior we would want to stop. SafePrompt is a starting point for that work: I want to learn what would make a representation-based guardrail dependable enough to trust with more capable systems.
 
 ## Research context
 
