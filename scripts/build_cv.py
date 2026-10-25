@@ -14,6 +14,8 @@ from docx.shared import Inches, Pt, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_TAB_ALIGNMENT
 from docx.text.paragraph import Paragraph as WordParagraph
 from docx.oxml.ns import qn
+from docx.oxml import OxmlElement
+from docx.opc.constants import RELATIONSHIP_TYPE as RT
 from copy import deepcopy
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_LEFT, TA_CENTER
@@ -32,8 +34,13 @@ OUT.mkdir(exist_ok=True)
 def cv_blocks():
     c = DATA
     yield 'title', c['basics']['name']
-    yield 'contact', c['basics']['email'] + '  |  ' + c['basics']['location']
+    yield 'contact', c['basics']['email'] + '  |  ' + c['basics']['location'] + '  |  ' + c['basics']['website'].removeprefix('https://')
     yield 'body', c['basics']['summary']
+    yield 'heading', 'Current Research'
+    for project in c['current_research']:
+        yield 'item', project['title'] + ' | ' + project['status']
+        for bullet in project['bullets']:
+            yield 'bullet', bullet
     yield 'heading', 'Research Manuscripts'
     for paper in c['publications']:
         yield 'item', paper['title']
@@ -103,7 +110,7 @@ def build_docx():
             p.style = doc.styles['Title']
             pf.space_after = Pt(5)
         if kind == 'heading':
-            pf.space_before = Pt(8)
+            pf.space_before = Pt(6)
             pf.space_after = Pt(4)
         if kind == 'item':
             pf.space_before = Pt(5)
@@ -113,6 +120,29 @@ def build_docx():
         if kind == 'bullet':
             pf.left_indent = Inches(.15)
             pf.first_line_indent = Inches(-.12)
+        website_label = DATA['basics']['website'].removeprefix('https://')
+        if kind == 'contact' and website_label in text:
+            prefix = p.add_run(text.split(website_label)[0])
+            prefix.font.name = 'Times New Roman'
+            prefix.font.size = Pt(11)
+            link = OxmlElement('w:hyperlink')
+            link.set(qn('r:id'), p.part.relate_to(DATA['basics']['website'], RT.HYPERLINK, is_external=True))
+            link_run = OxmlElement('w:r')
+            props = OxmlElement('w:rPr')
+            fonts = OxmlElement('w:rFonts')
+            fonts.set(qn('w:ascii'), 'Times New Roman')
+            fonts.set(qn('w:hAnsi'), 'Times New Roman')
+            props.append(fonts)
+            size = OxmlElement('w:sz')
+            size.set(qn('w:val'), '22')
+            props.append(size)
+            link_run.append(props)
+            value = OxmlElement('w:t')
+            value.text = website_label
+            link_run.append(value)
+            link.append(link_run)
+            p._p.append(link)
+            continue
         run = p.add_run(text)
         run.font.name = 'Times New Roman'
         run.font.size = Pt(19 if kind == 'title' else 10.5 if kind == 'meta' else 11)
@@ -159,7 +189,7 @@ def build_pdf():
         'title':dict(fontName=bold,fontSize=19,leading=23,spaceAfter=5,alignment=TA_CENTER),
         'subtitle':dict(fontSize=12,leading=15,spaceAfter=4),
         'contact':dict(fontSize=11,leading=12,spaceAfter=9,alignment=TA_CENTER),
-        'heading':dict(fontName=bold,fontSize=11,leading=13,spaceBefore=8,spaceAfter=4,keepWithNext=True,alignment=TA_CENTER),
+        'heading':dict(fontName=bold,fontSize=11,leading=13,spaceBefore=6,spaceAfter=4,keepWithNext=True,alignment=TA_CENTER),
         'item':dict(fontName=bold,fontSize=11,leading=13,spaceBefore=5,spaceAfter=2,keepWithNext=True),
         'meta':dict(fontSize=10.5,leading=12,spaceAfter=4,keepWithNext=True),
         'role':dict(fontSize=11,leading=12,spaceAfter=4,keepWithNext=True),
@@ -178,6 +208,9 @@ def build_pdf():
             if kind == 'bullet': safe = '&#8226; ' + safe
             if kind == 'contact':
                 safe = safe.replace(DATA['basics']['email'], f'<link href="mailto:{DATA["basics"]["email"]}">{DATA["basics"]["email"]}</link>')
+                website = DATA['basics']['website']
+                label = website.removeprefix('https://')
+                safe = safe.replace(label, f'<link href="{website}">{label}</link>')
             flow.append(Paragraph(safe, styles[kind]))
     SimpleDocTemplate(str(OUT/'anh-minh-hoang-cv.pdf'), pagesize=letter,
                       leftMargin=46.8,rightMargin=46.8,topMargin=43.2,bottomMargin=43.2,

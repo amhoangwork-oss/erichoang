@@ -2,7 +2,7 @@
 title: "SafePrompt: Jailbreak Search Defense through Activation Signatures"
 short_title: SafePrompt
 permalink: /research/safeprompt/
-order: 1
+order: 2
 authors: Anh Minh Hoang · VinUniversity
 research_area: Jailbreak defense · Activation signatures
 status: ACL ARR · October 2026 submission · Under review

@@ -2,7 +2,7 @@
 title: "Latent-Target Poisoning: Discovering Attack Populations in Coding Assistants"
 short_title: Latent-Target Poisoning
 permalink: /research/latent-target-poisoning/
-order: 2
+order: 1
 authors: Anh Minh Hoang · VinUniversity
 research_area: Training-data security · Population discovery
 status: ACL ARR · October 2026 submission · Under review

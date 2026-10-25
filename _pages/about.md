@@ -6,16 +6,20 @@ redirect_from:
   - /about.html
 ---
 
-I'm **Eric Hoang** (Anh Minh Hoang), a fourth-year Computer Science undergraduate at **VinUniversity** researching **LLM safety and alignment**. You can call me Eric.
+I'm **Eric Hoang** (Anh-Minh Hoang), a fourth-year Computer Science undergraduate at **VinUniversity** working on **AI alignment**. You can call me Eric.
 
 ## Research
 
-I want to understand what would let us trust increasingly capable AI systems. My starting point is how language models represent the requests they receive: whether those representations can help us recognize harmful behavior, and how training can change what the model does with otherwise ordinary requests. I care about safety beyond a benchmark score—whether safeguards cover the situations people actually encounter, and whether they keep working when models plan, use tools, and help build more capable successors. I want to connect a better understanding of models with alignment guardrails we have good reason to trust.
+I want to understand what it would take to trust a model that can plan, use tools, and help develop its successors. My work started with trying to poison and break models; it has led me toward alignment, interpretability, and the question of whether models can help align themselves. I take recursive self-improvement seriously, and I want to work on safeguards we could still trust as capabilities advance.
+
+I'm currently working on **[constitutional self-alignment]({{ '/research/constitutional-self-alignment/' | relative_url }})** through self-critique and on-policy distillation. The question is whether a model can improve its adherence to explicit principles with minimal supervised or RLHF intervention. This project is still in its infancy.
+
+I'm also interested in what a model's representations can tell us about behavior we haven't thought to test. A strong benchmark score only covers the situations we chose to measure; I care about the gaps, especially when a model can act on the world.
 
 I currently have two sole-author manuscripts **under review in the October 2026 cycle of ACL Rolling Review (ARR)**:
 
-- **[SafePrompt]({{ '/research/safeprompt/' | relative_url }})** studies whether activation signatures can detect jailbreak search before requests reach a victim model, while preserving legitimate use.
 - **[Latent-Target Poisoning]({{ '/research/latent-target-poisoning/' | relative_url }})** studies how a coding assistant's frozen representations can reveal populations to target through poisoned training responses, without modifying users' inference requests.
+- **[SafePrompt]({{ '/research/safeprompt/' | relative_url }})** studies whether activation signatures can detect jailbreak search before requests reach a victim model, while preserving legitimate use.
 
 [Read more about these projects]({{ '/publications/' | relative_url }}).
 
@@ -25,6 +29,6 @@ I also work with Nidal Kamel on [satellite image super-resolution]({{ '/research
 
 ## Contact
 
-I'm interested in research conversations and collaborations in LLM safety and alignment. You can reach me at [23minh.ha@vinuni.edu.vn](mailto:23minh.ha@vinuni.edu.vn).
+I'm looking for research projects and collaborations in alignment, especially self-alignment, model representations, and reliable oversight of capable agents. You can reach me at [23minh.ha@vinuni.edu.vn](mailto:23minh.ha@vinuni.edu.vn).
 
 [CV]({{ '/cv/' | relative_url }}) · [PDF résumé]({{ '/files/anh-minh-hoang-cv.pdf' | relative_url }})

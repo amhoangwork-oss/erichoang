@@ -27,3 +27,4 @@ mystuff/
 tmp/
 .jekyll-cache/
 .jekyll-metadata
+/output/

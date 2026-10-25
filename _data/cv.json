@@ -1,23 +1,12 @@
 {
   "basics": {
-    "name": "Anh Minh (Eric) Hoang",
+    "name": "Anh-Minh Hoang (Eric)",
     "email": "23minh.ha@vinuni.edu.vn",
     "location": "Hanoi, Vietnam",
-    "summary": "Research in LLM safety and alignment, focused on detecting attempts to bypass safeguards and understanding how compromised training data changes model behavior."
+    "summary": "AI alignment research focused on model representations, self-critique, and reliable safeguards for increasingly capable language models.",
+    "website": "https://amhoangwork-oss.github.io/erichoang/"
   },
   "publications": [
-    {
-      "title": "SafePrompt: Jailbreak Search Defense through Activation Signatures",
-      "authors": "Anh Minh Hoang",
-      "status": "ACL ARR, October 2026 cycle · Under review",
-      "year": "2026",
-      "url": "/research/safeprompt/",
-      "paper": "/files/safeprompt-preprint.pdf",
-      "bullets": [
-        "Designed a filter that detects attempts to bypass a language model’s safety rules by examining patterns in a separate model’s internal activity.",
-        "Across two models, reduced the success of an automated attack from 91–92% to 14–17% after 90 attempts per goal; blocked 2.53% of 750 legitimate requests. Evaluated repeated attacks, attacker feedback, and the cost of rejecting valid requests."
-      ]
-    },
     {
       "title": "Latent-Target Poisoning: Discovering Attack Populations in Coding Assistants",
       "authors": "Anh Minh Hoang",
@@ -26,8 +15,20 @@
       "url": "/research/latent-target-poisoning/",
       "paper": "/files/latent-target-poisoning-preprint.pdf",
       "bullets": [
-        "Investigated how tampered training examples can teach coding assistants to insert unwanted code into answers to ordinary requests, without adding a trigger to the user’s prompt.",
-        "Built controlled experiments across two model families and two coding datasets, comparing four ways of selecting affected requests. Measured unwanted-code generation, effects on other requests, and performance on standard coding tasks."
+        "Discovered target populations from frozen model representations and poisoned training responses to induce unwanted code on unchanged requests.",
+        "Compared four population selectors across two model families and two datasets, measuring target emission, spillover, and coding functionality."
+      ]
+    },
+    {
+      "title": "SafePrompt: Jailbreak Search Defense through Activation Signatures",
+      "authors": "Anh Minh Hoang",
+      "status": "ACL ARR, October 2026 cycle · Under review",
+      "year": "2026",
+      "url": "/research/safeprompt/",
+      "paper": "/files/safeprompt-preprint.pdf",
+      "bullets": [
+        "Developed an activation-based filter for jailbreak search that passes accepted requests unchanged to a separate language model.",
+        "Across two models, reduced PAIR attack success from 91–92% to 14–17% at 90 queries per goal, rejecting 2.53% of 750 legitimate requests; evaluated adaptive search and sensitive-topic utility."
       ]
     },
     {
@@ -38,8 +39,8 @@
       "url": "/research/csr/",
       "paper": "/files/isprs-working-manuscript.pdf",
       "bullets": [
-        "Developed a model that improves the spatial detail of satellite images from different sensors, using wavelength and pixel-size information instead of a separate model for each sensor.",
-        "Achieved the largest mean structural improvement among compared methods on all four 4× OpenSR benchmark suites. Tested adaptation to new satellite data, including 174 held-out PROBA-V scenes."
+        "Developed satellite image reconstruction using wavelength and pixel-size information to transfer across sensors.",
+        "Achieved the largest mean structural improvement on all four 4× OpenSR benchmark suites; evaluated transfer on 174 held-out PROBA-V scenes."
       ]
     }
   ],
@@ -70,8 +71,18 @@
     }
   ],
   "skills": {
-    "Research": "Language-model safety evaluation, model representations, training-data security, controlled experiments.",
-    "Tools": "Python, PyTorch, PyTorch Lightning, Hydra, Hugging Face Transformers, LoRA/PEFT.",
+    "Research": "Alignment, model representations, safety evaluation, training-data poisoning, KL-regularized adaptation.",
+    "Tools": "Python, PyTorch, Transformers, LoRA/PEFT, vLLM, verl, PyTorch Lightning, Hydra.",
     "English": "IELTS 8.5 overall (Listening 9.0, Reading 9.0, Speaking 8.0, Writing 7.0)."
-  }
+  },
+  "current_research": [
+    {
+      "title": "Constitutional self-alignment",
+      "status": "Work in progress",
+      "url": "/research/constitutional-self-alignment/",
+      "bullets": [
+        "Investigating whether self-critique and on-policy distillation can improve adherence to explicit principles with minimal supervised or RLHF intervention."
+      ]
+    }
+  ]
 }

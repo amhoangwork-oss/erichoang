@@ -6,7 +6,12 @@ redirect_from:
   - /research/
 ---
 
-<p>I want to understand how language models behave beyond the cases we know to test, and how their internal representations can help us build safeguards we can trust. I also work on satellite image reconstruction.</p>
+<p>My research is moving toward AI alignment: how models could help align themselves, what their representations reveal about their behavior, and what would let us trust safeguards as capabilities advance. I also work on satellite image reconstruction.</p>
+<h2>Current work</h2>
+<h3><a href="{{ '/research/constitutional-self-alignment/' | relative_url }}">Constitutional self-alignment</a></h3>
+<p><em>Work in progress</em></p>
+<p>I'm investigating whether self-critique and on-policy distillation can help a model follow explicit principles with minimal supervised or RLHF intervention. This project is still in its infancy.</p>
+<h2>Research manuscripts</h2>
 {% assign papers = site.publications | sort: 'order' %}
 {% for paper in papers %}
 <h3><a href="{{ paper.url | relative_url }}">{{ paper.title }}</a></h3>

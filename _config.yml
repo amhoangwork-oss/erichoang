@@ -3,7 +3,7 @@ site_theme: default
 title: Eric Hoang
 title_separator: "-"
 name: Eric Hoang
-description: Eric Hoang (Anh Minh Hoang), fourth-year VinUniversity undergraduate researching LLM safety and alignment, jailbreak defenses, and training-data poisoning.
+description: Eric Hoang (Anh-Minh Hoang), fourth-year VinUniversity undergraduate researching AI alignment, model representations, and constitutional self-alignment.
 words_per_minute: 200
 read_more: disabled
 # GitHub Pages project URL, inferred from this repository's origin.
@@ -15,7 +15,7 @@ timezone: Asia/Ho_Chi_Minh
 openreview_public: false
 author:
   name: Eric Hoang
-  bio: LLM safety and alignment research
+  bio: AI alignment research
   location: Hanoi, Vietnam
   employer: VinUniversity
   email: 23minh.ha@vinuni.edu.vn
@@ -37,6 +37,7 @@ exclude:
   - mystuff
   - tmp
   - local
+  - output
   - vendor
   - node_modules
   - scripts

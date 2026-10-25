@@ -10,6 +10,19 @@ redirect_from:
 
 {{ cv.basics.summary }}
 
+[Website]({{ cv.basics.website }})
+
+## Current research
+
+{% for item in cv.current_research %}
+### [{{ item.title }}]({{ item.url | relative_url }})
+
+*{{ item.status }}*
+
+{% for bullet in item.bullets %}- {{ bullet }}
+{% endfor %}
+{% endfor %}
+
 ## Research manuscripts
 
 {% for item in cv.publications %}
