@@ -71,8 +71,8 @@
     }
   ],
   "skills": {
-    "Research": "Alignment, model representations, safety evaluation, training-data poisoning, KL-regularized adaptation.",
-    "Tools": "Python, PyTorch, Transformers, LoRA/PEFT, vLLM, verl, PyTorch Lightning, Hydra.",
+    "Research": "AI alignment and safety, deep learning, natural language processing, computer vision, experimental design.",
+    "Tools": "Python, PyTorch, Hugging Face Transformers, Linux, Git.",
     "English": "IELTS 8.5 overall (Listening 9.0, Reading 9.0, Speaking 8.0, Writing 7.0)."
   },
   "current_research": [
