@@ -10,11 +10,11 @@ I'm **Eric Hoang** (Anh-Minh Hoang), a fourth-year Computer Science undergraduat
 
 ## Research
 
-I want to understand what it would take to trust a model that can plan, use tools, and help develop its successors. My work started with trying to poison and break models; it has led me toward alignment, interpretability, and the question of whether models can help align themselves. I take recursive self-improvement seriously, and I want to work on safeguards we could still trust as capabilities advance.
+I want to understand how we could trust increasingly capable models. My work started with trying to poison and break them; it has led me toward alignment, interpretability, and the question of whether models can help align themselves. I take recursive self-improvement seriously, and I want to work on that problem while we still have time to figure it out.
 
-I'm currently working on **[constitutional self-alignment]({{ '/research/constitutional-self-alignment/' | relative_url }})** through self-critique and on-policy distillation. The question is whether a model can improve its adherence to explicit principles with minimal supervised or RLHF intervention. This project is still in its infancy.
+I'm currently working on **[constitutional self-alignment]({{ '/research/constitutional-self-alignment/' | relative_url }})**, exploring whether a model can learn to be a better critic and teacher for itself. The project is still in its infancy.
 
-I'm also interested in what a model's representations can tell us about behavior we haven't thought to test. A strong benchmark score only covers the situations we chose to measure; I care about the gaps, especially when a model can act on the world.
+I'm also interested in understanding representations and what we can learn by probing them. There's a lot about alignment that our current benchmarks don't capture, and I want to understand models beyond how well they do on the tests we've given them.
 
 I currently have two sole-author manuscripts **under review in the October 2026 cycle of ACL Rolling Review (ARR)**:
 

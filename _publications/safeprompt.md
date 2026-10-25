@@ -43,13 +43,13 @@ The gate rejects **2.53% of the 750 benign requests**. This is input rejection, 
 
 SafePrompt has made me think harder about what we mean when we call a model safe. I worry that we often read safety leaderboards like performance leaderboards: a refusal becomes a successful answer, and a higher score becomes evidence of a safer model. [HarmBench](https://arxiv.org/abs/2402.04249) and [JailbreakBench](https://arxiv.org/abs/2404.01318) give us useful, reproducible tests. My concern is what we infer from those scores. Refusing a collection of harmful requests tells us something important, but it leaves open which harms we tested, whose standard we used, and what we missed.
 
-For me, safety has to be defined against an explicit reference: what should this system help with, what should it refuse, and in which circumstances? I care more about how thoroughly we cover that boundary than about another increase in aggregate refusal. A model should be able to help someone understand a sensitive topic without helping them cause harm. An evaluation needs to test both sides of that distinction, including the ambiguous cases where context changes what a responsible answer looks like.
+Before calling a model safe, I want to know what we expect it to help with, what it should refuse, and in which circumstances. I care more about how thoroughly we test those distinctions than about another increase in aggregate refusal. A model should be able to help someone understand a sensitive topic without helping them cause harm, and context can change what a responsible answer looks like.
 
 That is also how I want to judge SafePrompt. Its results give me a reason to investigate activation signals further. The larger question is whether those signals help enforce a safety standard across unfamiliar topics and interactions, while still letting people get useful help.
 
 ## Future directions
 
-The question I want to pursue is: what would give us good reason to trust a safeguard outside the examples we used to build it? I'd like to start with an explicit safety reference, map the situations it covers, and look deliberately for gaps. Does a defense recognize the same harmful goal when it appears in an unfamiliar domain? Can it distinguish legitimate discussion from assistance that enables harm? What happens when a dangerous plan is spread across several individually ordinary requests?
+I want to understand where these safeguards stop working. Does a defense recognize a harmful goal in an unfamiliar domain, or when it's spread across a conversation? And how much legitimate use do we lose by making the defense stricter?
 
 Those questions become more consequential when a model can act. A coding agent might refuse an obviously harmful prompt yet carry out the same outcome through a sequence of file edits and tool calls. I want evaluations that follow those consequences, alongside probes that help us understand when the model's internal state is moving toward behavior we would want to stop. SafePrompt is a starting point for that work: I want to learn what would make a representation-based guardrail dependable enough to trust with more capable systems.
 
